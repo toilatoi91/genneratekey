@@ -14,5 +14,10 @@ namespace GennerateKey
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            txtLicenceKey.Text= CheckKey.GetLicenseKey(txtProducKey.Text);
+        }
     }
 }
