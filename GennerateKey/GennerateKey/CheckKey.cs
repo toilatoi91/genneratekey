@@ -85,6 +85,11 @@ namespace GennerateKey
       string str = CheckKey.MD5Encrypt(CheckKey.MD5Encrypt(CheckKey.GetProductNo(ss).Replace("-", "")).Substring(0, 20)).Substring(16).ToUpper();
       return str.Substring(0, 4).Replace(str[1], ss[0]).Replace(str[3], ss[1]) + "-" + str.Substring(4, 4) + "-" + str.Substring(8, 4) + "-" + str.Substring(12, 4);
     }
+    public static string GetLicenseKey2(string ss)
+    {
+        string str = CheckKey.MD5Encrypt(CheckKey.MD5Encrypt(ss.Replace("-", "")).Substring(0, 20)).Substring(16).ToUpper();
+        return str.Substring(0, 4).Replace(str[1], ss[0]).Replace(str[3], ss[1]) + "-" + str.Substring(4, 4) + "-" + str.Substring(8, 4) + "-" + str.Substring(12, 4);
+    }
 
     public static bool CheckValidLicense(string sLicenseKey)
     {
