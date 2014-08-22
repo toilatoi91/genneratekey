@@ -11,6 +11,7 @@ namespace GennerateKey
   {
     private static string LK = "";
     private static bool bExit;
+    public static string mac = "";
 
     static CheckKey()
     {
@@ -75,7 +76,7 @@ namespace GennerateKey
     {
         if (ss.Length == 1)
             ss = ss + 1;
-      string str1 = CheckKey.MD5Encrypt(CheckKey.GetMacAdd());
+      string str1 = CheckKey.MD5Encrypt(mac);
       string str2 = CheckKey.MD5Encrypt(str1.Replace(str1[1], ss[0]).Replace(str1[3], ss[1])).Substring(16).ToUpper();
       return str2.Substring(0, 4) + "-" + str2.Substring(4, 4) + "-" + str2.Substring(8, 4).Replace(str2[10], ss[0]).Replace(str2[11], ss[1]) + "-" + str2.Substring(12, 4);
     }

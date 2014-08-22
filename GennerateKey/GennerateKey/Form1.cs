@@ -27,7 +27,11 @@ namespace GennerateKey
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtLicenceKey.Text = CheckKey.GetLicenseKey2(txtProducKey.Text);
+            CheckKey.mac = txtProducKey.Text;
+
+
+
+            txtLicenceKey.Text = CheckKey.GetLicenseKey(CheckKey.GetProductNo());
         }
     }
 }
